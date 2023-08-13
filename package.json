@@ -1,0 +1,16 @@
+{
+  "name": "mini-vue1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Vasu",
+  "license": "ISC",
+  "dependencies": {
+    "vitest": "^0.34.1"
+  }
+}
