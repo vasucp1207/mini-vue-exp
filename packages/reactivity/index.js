@@ -1,4 +1,6 @@
 import { reactive } from "./reactive.js";
+import { ref, unRef } from "./ref.js";
 
 const counter = reactive({ count: 0 });
-console.log(counter.count);
+const a = ref(1);
+console.log(unRef(a));

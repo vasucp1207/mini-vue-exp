@@ -2,15 +2,18 @@
   "name": "mini-vue1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
+  "main": "lib/guide-mini-vue.cjs.js",
+  "module": "lib/guide-mini-vue.esm.js",
   "scripts": {
+    "build": "rollup -c rollup.config.js",
     "test": "vitest"
   },
   "keywords": [],
   "author": "Vasu",
   "license": "ISC",
   "dependencies": {
+    "rollup": "^3.28.0",
     "vitest": "^0.34.1"
   }
 }
