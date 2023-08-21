@@ -1,4 +1,3 @@
-import { isObject } from "../shared/index";
 import { createComponentInstance, setupComponent } from "./component";
 import { ShapeFlags } from "../shared/ShapeFlags";
 
@@ -8,6 +7,7 @@ export function render(vnode, container) {
 
 function patch(vnode, container) {
   const { shapeFlag } = vnode;
+  console.log(shapeFlag, "shapeFlag");
   if (shapeFlag & ShapeFlags.ELEMENT) {
     processElement(vnode, container);
   } else if (shapeFlag & ShapeFlags.STATEFUL_COMPONENT) {
@@ -25,6 +25,7 @@ function mountElement(vnode, container) {
   const { children, shapeFlag } = vnode;
 
   // children
+  console.log(shapeFlag, "flag in mountElement");
   if (shapeFlag & ShapeFlags.TEXT_CHILDREN) {
     el.textContent = children;
   } else if (shapeFlag & ShapeFlags.ARRAY_CHILDREN) {
@@ -70,6 +71,7 @@ function setupRenderEffect(instance, initialVNode, container) {
   const { proxy } = instance;
   const subTree = instance.render.call(proxy);
 
+  console.log(subTree, "subTree");
   patch(subTree, container);
 
   initialVNode.el = subTree.el;
